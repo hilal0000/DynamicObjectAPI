@@ -22,8 +22,12 @@ namespace DynamicObjectAPI.Services
 
         private readonly Dictionary<string, List<string>> requiredFields = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase)
 {
-    { "Product", new List<string> { "Name", "Price" } },
-    { "Order", new List<string> { "CustomerId", "ProductList" } },
+        { "Product", new List<string> { "Name", "Price" } },
+        { "Order", new List<string> { "CustomerId", "ProductList" } },
+        { "Payment", new List<string> { "Amount", "PaymentMethod", "PaymentDate", "Status" }},
+        { "Customer", new List<string> { "CustomerId", "Name", "City" } },
+        { "Address", new List<string> { "City" }},
+        { "Category", new List<string> { "Name", "Description" }},
 };
 
 
@@ -43,7 +47,6 @@ namespace DynamicObjectAPI.Services
                     }
                 }
             }
-
             return new ResponseViewModel<object> { IsSuccess = true }; 
         }
 
