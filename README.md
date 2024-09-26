@@ -36,7 +36,7 @@ The API allows users to create dynamic objects with flexible structures, such as
         Product requires Name, Price.
         Payment requires Amount, PaymentMethod, PaymentDate, Status.
     Field Validation: Required fields for each object type are checked before saving. If any required field is missing, the creation process is halted with an error message.
-    Optional Sub-Objects: Users can add related sub-objects to a master object (e.g., a Payment for an Order). Sub-objects are optional but will also undergo required field validation if present.
+    Optional Sub-Objects: Users can add related sub-objects to a master object. Sub-objects are optional but will also undergo required field validation if present.
     Transaction Support: Object creation is wrapped in a transaction to ensure all or nothing operations. If an error occurs, all changes are rolled back.
 	
 2- CRUD Operations:
