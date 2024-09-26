@@ -30,10 +30,14 @@ It allows users to dynamically create, read, update, and delete objects (such as
 
 1- Dynamic Object Creation:
 
-    Users can create dynamic objects with varying structures (e.g., orders, products, customers or something else).
-	The API supports the creation of both master objects and their related sub-objects.
-    Objects are stored in a single table in the database.
-    Supports dynamic field definitions based on object types.
+The API allows users to create dynamic objects with flexible structures, such as orders, products, or customers. Objects are stored in a single database table, and related sub-objects can optionally be added. Key features include:
+
+    Dynamic Fields: Objects can have different fields depending on the type. For some object types (e.g., Order, Product, Payment), specific required fields must be provided. For instance:
+        Product requires Name, Price.
+        Payment requires Amount, PaymentMethod, PaymentDate, Status.
+    Field Validation: Required fields for each object type are checked before saving. If any required field is missing, the creation process is halted with an error message.
+    Optional Sub-Objects: Users can add related sub-objects to a master object. Sub-objects are optional but will also undergo required field validation if present.
+    Transaction Support: Object creation is wrapped in a transaction to ensure all or nothing operations. If an error occurs, all changes are rolled back.
 	
 2- CRUD Operations:
 
