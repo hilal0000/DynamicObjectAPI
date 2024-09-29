@@ -2,16 +2,6 @@
 
 namespace DynamicObjectAPI.Request
 {
-    //public class CreateObjectRequest
-    //{
-    //    public string Type { get; set; }
-
-    //    [Required]
-    //    public Dictionary<string, object> Fields { get; set; }
-
-    //    public string MasterObjectId { get; set; }
-    //}
-
     public class CreateObjectRequest
     {
         [Required]
@@ -31,5 +21,6 @@ namespace DynamicObjectAPI.Request
         public string Type { get; set; }
         [Required]
         public Dictionary<string, object> Fields { get; set; }
+        public List<SubObjectRequest>? RelatedSubObjects { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace DynamicObjectAPI.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<DynamicObject> DynamicObjects { get; set; }
+        public DbSet<DynamicObjectTypes> DynamicObjectTypes { get; set; } 
 
     }
 }
